@@ -1,7 +1,6 @@
 cmake-build-*/
 build/
 out/
-_deps/
 .idea/
 *.exe
 *.pdb
