@@ -37,12 +37,22 @@ endif ()
 
 add_executable(${PROJECT_NAME}
         src/main.cpp
+        thirdparty/imgui/imgui.cpp
+        thirdparty/imgui/imgui_demo.cpp
+        thirdparty/imgui/imgui_draw.cpp
+        thirdparty/imgui/imgui_tables.cpp
+        thirdparty/imgui/imgui_widgets.cpp
+        thirdparty/rlImGui/rlImGui.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
         src
         ${raylib_SOURCE_DIR}/src
         ${raygui_SOURCE_DIR}/src
+        thirdparty/imgui
+        thirdparty/imgui/backends
+        thirdparty/rlImGui
+        thirdparty/rlImGui/extras
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib raygui)
