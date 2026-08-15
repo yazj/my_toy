@@ -4,7 +4,7 @@
 #include "raygui.h"
 
 int main() {
-  InitWindow(1280, 960, "");
+  InitWindow(720, 960, "");
   SetTargetFPS(60);
 
   while (!WindowShouldClose()) {
