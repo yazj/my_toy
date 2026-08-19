@@ -47,6 +47,8 @@ add_executable(${PROJECT_NAME}
         src/actor/actor.h
         src/core/global_actor_array.cpp
         src/core/global_actor_array.h
+        src/actor/player/player.cpp
+        src/actor/player/player.h
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE

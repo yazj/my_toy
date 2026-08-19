@@ -12,8 +12,8 @@ class Global_actor_array;
 
 class Actor {
 public:
-  explicit Actor(Global_actor_array *global_actor_array, Vector2 loc, float rot,
-                 const char *img_path);
+  explicit Actor(Global_actor_array &global_actor_array, Vector2 loc, float rot,
+                 float scale, const char *img_path);
   virtual ~Actor();
 
   virtual void begin_play() = 0;
@@ -24,13 +24,15 @@ public:
 
   [[nodiscard]] Vector2 get_actor_location() const { return _location; }
   [[nodiscard]] float get_actor_rotation() const { return _rotation; }
+  [[nodiscard]] float get_actor_scale() const { return _scale; }
 
   [[nodiscard]] bool is_alive() const { return _alive; }
 
-  void move(Vector2 vec);
+  virtual void move(Vector2 vec);
   void rotate(float rot);
 
-  void set_image(const char *img_path);
+  void set_texture(const char *img_path);
+  [[nodiscard]] Texture2D get_texture() const { return _tex; }
 
 protected:
   bool _alive = true;
@@ -38,10 +40,11 @@ protected:
 
   Vector2 _location{};
   float _rotation{0.0f};
+  float _scale{1.0f};
 
 private:
-  Image _img{};
-  Global_actor_array *_global_actor_array;
+  Texture2D _tex{};
+  Global_actor_array &_global_actor_array;
 };
 
 #endif // MY_TOY_ACTOR_H
