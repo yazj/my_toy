@@ -43,6 +43,10 @@ add_executable(${PROJECT_NAME}
         thirdparty/imgui/imgui_tables.cpp
         thirdparty/imgui/imgui_widgets.cpp
         thirdparty/rlImGui/rlImGui.cpp
+        src/actor/actor.cpp
+        src/actor/actor.h
+        src/core/global_actor_array.cpp
+        src/core/global_actor_array.h
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
